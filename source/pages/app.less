@@ -1,3 +1,75 @@
-h1 {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+@mainColor: #ff8663;
+
+* {
+    box-sizing: border-box;
+}
+html, body {
+    height: 100%;
+}
+h1, h2 {
+    margin: 0;
+}
+ul {
+    margin: 0;
+    padding: 0;
+    & li {
+        list-style-type: none;
+    }
+}
+a {
+    text-decoration: none;
+}
+
+@import '../components/plate/plate';
+
+.main {
+    height: 100%;
+    min-height: 650px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    &-title {
+        position: relative;
+        font-family: 'Lobster', cursive;
+        font-weight: 400;
+        color: @mainColor;
+        margin-bottom: 30px;
+        padding-bottom: 15px;
+        border-bottom: 2px solid @mainColor;
+
+        &:after {
+            content: '';
+            display: block;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: @mainColor;
+            position: absolute;
+            bottom: -5px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    }
+    &-button {
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 10px;
+        background-color: @mainColor;
+        color: #f0f0f0;
+        padding: 10px 15px;
+        outline: none;
+        border: none;
+        transition: all .3s;
+        box-shadow: 0 0 0 60px rgba(0,0,0,0) inset, .1em .1em .2em #800;
+        & > i {
+            padding-right: 5px;
+        }
+        &:active {
+             box-shadow: 0 0 0 60px rgba(0,0,0,.05) inset;
+        }
+    }
 }

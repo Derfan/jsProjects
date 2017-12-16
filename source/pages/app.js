@@ -1,24 +1,22 @@
-import createMenu from "../components/menu/menu";
+import createList from "../components/list/list";
 import 'normalize.css';
 import './app.less';
 
-
-let wrapper = document.querySelector('.wrapper');
-let context = { 
-    title: "HBS Menu", 
-    className: "menu",
-    menuItems: [
+let container = document.querySelector('#listContainer');
+let listItems = {
+    friends: [
         {
-            content: 'Main'
+            photo: "http://i.imgur.com/GMIH8dO.gif",
+            name: "Artem",
+            lastName: "Barabanov"
         },
         {
-            content: 'About'
+            photo: "http://www.animated-gifs.eu/category_cartoons/avatars-100x100-cartoons-spongebob/0038.gif",
+            name: "Иришка",
+            lastName: "Кочерыжка"
         },
-        {
-            content: 'Blog'
-        }
     ]
 };
-let menu = createMenu(context);
+let list = createList(listItems);
 
-wrapper.innerHTML = menu;
+container.innerHTML = list;
