@@ -1,22 +1,16 @@
 import createList from "../components/list/list";
+import getList from "../components/vkApi";
 import 'normalize.css';
 import './app.less';
 
-let container = document.querySelector('#listContainer');
-let listItems = {
-    friends: [
-        {
-            photo: "http://i.imgur.com/GMIH8dO.gif",
-            name: "Artem",
-            lastName: "Barabanov"
-        },
-        {
-            photo: "http://www.animated-gifs.eu/category_cartoons/avatars-100x100-cartoons-spongebob/0038.gif",
-            name: "Иришка",
-            lastName: "Кочерыжка"
-        },
-    ]
-};
-let list = createList(listItems);
+let authBtn = document.querySelector('#authorization');
+let closeWindow = document.querySelector('#closeWindow');
 
-container.innerHTML = list;
+authBtn.addEventListener('click', getList);
+
+closeWindow.addEventListener('click', (e) => {
+    const plate = document.querySelector('.plate-wrapper');
+    e.preventDefault();
+
+    plate.classList.remove('show');
+});

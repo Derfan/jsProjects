@@ -1,12 +1,13 @@
-@mainColor: #ff8663;
+@mainColor: #222;
 @iconColor: #c4c4c4;
 @hoverColor: #f0f0f0;
+@titleColor: #00d8ff;
 
 .plate {
     width: 650px;
 
     &-wrapper {
-        display: flex;
+        display: none;
         justify-content: center;
         align-items: center;
         width: 100%;
@@ -16,6 +17,9 @@
         top: 0;
         left: 0;
         background: rgba(0, 0, 0, .4);
+    }
+    &-wrapper.show {
+        display: flex;
     }
 
     &-header {
@@ -32,10 +36,21 @@
             font-size: 18px;
             line-height: 20px;
             font-weight: 500;
+            color: @titleColor;
         }
 
         & i {
             color: #fff;
+            cursor: pointer;
+            border-radius: 50%;
+            padding: 5px;
+            transition: all .3s;
+            &:hover {
+                background-color: rgba(158,158,158,.2);
+            }
+            &:active {
+                background-color: rgba(158,158,158,.4);
+            }
         }
     }
     &-inputs {
@@ -46,9 +61,12 @@
             width: 100%;
             border: none;
             outline: none;
-            padding: 10px 10px 10px 35px;
+            padding: 7px 10px 7px 35px;
             border-radius: 19px;
-
+            border: 1px solid transparent;
+            &:focus {
+                border: 1px solid @titleColor;
+            }
             & + i {
                 position: absolute;
                 left: 18px;

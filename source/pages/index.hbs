@@ -12,11 +12,13 @@
     <body>
         <div class="wrapper main">
             <h1 class="main-title">другофильтр</h1>
-            <button class="main-button" type="submit">
+            <button id="authorization" class="main-button" type="submit">
                 <i class="material-icons">account_circle</i>
                 <span>Авторизоваться</span>
             </button>
+            <div id="error" class="main-error"></div>
         </div>
         {{> ../components/plate/plate}}
+        <script src="http://vk.com/js/api/openapi.js" type="text/javascript"></script>
     </body>
 </html>
