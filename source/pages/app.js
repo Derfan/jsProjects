@@ -1,16 +1,8 @@
 import createList from "../components/list/list";
-import getList from "../components/vkApi";
+import plateModule from '../components/plate/plate';
 import 'normalize.css';
 import './app.less';
 
-let authBtn = document.querySelector('#authorization');
-let closeWindow = document.querySelector('#closeWindow');
+const authBtn = document.querySelector('#authorization');
 
-authBtn.addEventListener('click', getList);
-
-closeWindow.addEventListener('click', (e) => {
-    const plate = document.querySelector('.plate-wrapper');
-    e.preventDefault();
-
-    plate.classList.remove('show');
-});
+authBtn.addEventListener('click', plateModule.init.bind(plateModule));

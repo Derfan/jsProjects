@@ -5,9 +5,11 @@
 
 .plate {
     width: 650px;
+    border-radius: 10px 10px 0 0;
+    box-shadow: 0px 0px 25px 0px rgba(0, 0, 0, .5);
 
     &-wrapper {
-        display: none;
+        display: flex;
         justify-content: center;
         align-items: center;
         width: 100%;
@@ -17,9 +19,6 @@
         top: 0;
         left: 0;
         background: rgba(0, 0, 0, .4);
-    }
-    &-wrapper.show {
-        display: flex;
     }
 
     &-header {
@@ -98,7 +97,6 @@
         display: flex;
         justify-content: flex-end;
         background: @hoverColor;
-        border-radius: 0 0 10px 10px;
         padding: 10px;
     }
 }
