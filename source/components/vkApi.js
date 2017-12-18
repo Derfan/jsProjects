@@ -3,7 +3,6 @@ require("babel-polyfill");
 import template from '../components/list/list.hbs';
 
 const vkModule = {
-    allFriends: undefined,
     async init() {
         const errorContainer = document.querySelector('#error');
         const userInfo = document.querySelector('#userInfo');
