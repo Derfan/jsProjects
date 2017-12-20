@@ -6,7 +6,7 @@ const vkModule = {
     async init() {
         const errorContainer = document.querySelector('#error');
         const userInfo = document.querySelector('#userInfo');
-        const results = document.querySelector('#listContainer');
+        const results = document.querySelector('#leftList');
 
         errorContainer.innerHTML = '';
 

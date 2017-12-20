@@ -1,14 +1,9 @@
-<div class="plate-list__title">Ваши друзья</div>
-<ul id="leftList" class="plate-list">
-    {{#each items}}
-        <li id="{{id}}" class="plate-list__item">
-            <a href="#" class="plate-list__link">
-                <div class="plate-list__img-wrapper">
-                    <img class="plate-list__img" src="{{photo_100}}">
-                    <span>{{first_name}} {{last_name}}</span>
-                </div>
-                <i class="move-button material-icons">add</i>
-            </a>
-        </li>
-    {{/each}}
-</ul>
+{{#each items}}
+    <li class="plate-list__item friend" draggable="true">
+        <div class="plate-list__img-wrapper">
+            <img class="plate-list__img" src="{{photo_100}}">
+            <span>{{first_name}} {{last_name}}</span>
+        </div>
+        <i class="move-button material-icons">add</i>
+    </li>
+{{/each}}

@@ -17,14 +17,17 @@
             </div>
         </div>
         <div class="plate-lists">
-            <div id="listContainer" class="plate-left"></div>
+            <div class="plate-left">
+                <div class="plate-list__title">Ваши друзья</div>
+                <ul id="leftList" class="plate-list"></ul>
+            </div>
             <div class="plate-right" id="filteredList">
                 <div class="plate-list__title">Друзья в списке</div>
                 <ul id="rightList" class="plate-list"></ul>
             </div>
         </div>
         <div class="plate-footer">
-            <button class="main-button" type="submit">
+            <button id="saveFriend" class="main-button" type="submit">
                 <i class="material-icons">save</i>
                 <span>Сохранить</span>
             </button>
