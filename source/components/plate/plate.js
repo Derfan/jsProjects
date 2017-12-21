@@ -1,4 +1,5 @@
 import vkModule from '../vkApi';
+import dnd from '../dnd';
 import template from './plate.hbs';
 import itemTemplate from '../list/list.hbs';
 import './plate.less';
@@ -36,11 +37,16 @@ const plateModule = {
         }
     },
     setParams() {
+        this.friends = document.querySelectorAll('.friend');
         this.userInfo = document.querySelector('#userInfo').innerText;
         this.movingBtns = document.querySelectorAll('.move-button');
         
-        for (let link of this.movingBtns) {
-            link.addEventListener('click', this.changeList.bind(this));   
+        for (let friend of this.friends) {
+            friend.addEventListener('click', this.move);
+            friend.addEventListener('dragstart', dnd.dragStart);
+            friend.addEventListener('dragover', dnd.dragOver);
+            friend.addEventListener('dragenter', dnd.dragEnter);
+            friend.addEventListener('drop', dnd.dragDrop);
         }
 
         this.inputLeft.addEventListener('keyup', this.filter.bind(this));
@@ -78,18 +84,14 @@ const plateModule = {
             i.hidden = (this.isMatching(i.textContent.trim(), e.target.value)) ? false : true;
         })
     },
-    changeList(e) {
-        e.preventDefault();
-
-        let friend = e.target.parentNode;
-
-        if (friend.parentNode.id.includes('leftList')) {
-            this.leftList.removeChild(friend);
-            this.rightList.appendChild(friend);
+    move() {
+        if (this.parentNode.id.includes('leftList')) {
+            plateModule.leftList.removeChild(this);
+            plateModule.rightList.appendChild(this);
         }
         else {
-            this.rightList.removeChild(friend);
-            this.leftList.appendChild(friend);
+            plateModule.rightList.removeChild(this);
+            plateModule.leftList.appendChild(this);
         }
     },
     save() {

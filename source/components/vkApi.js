@@ -27,7 +27,7 @@ const vkModule = {
     authorization() {
         return new Promise((resolve, reject) => {
             VK.init({
-                apiId: 6303649
+                apiId: 6306000
             });
             VK.Auth.login(data => {
                 if (data.session) {
