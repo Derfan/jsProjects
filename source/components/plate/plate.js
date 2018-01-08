@@ -53,7 +53,7 @@ const plateModule = {
         this.inputRight.addEventListener('keyup', this.filter.bind(this));
 
         this.saveBtn.addEventListener('click', this.save.bind(this));
-        this.closeBtn.addEventListener('click', this.close);
+        this.closeBtn.addEventListener('click', this.close.bind(this));
     },
     createFriendObject(friend) {
         const friendObject = new Object();
@@ -112,7 +112,7 @@ const plateModule = {
     close(e) {
         e.preventDefault();
 
-        plate.innerHTML = '';
+        this.plate.innerHTML = '';
     }
 }
 
