@@ -1,4 +1,4 @@
-# Friends-filter
+# Friends Filter
 
 > A Webpack project
 
