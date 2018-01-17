@@ -1,4 +1,4 @@
-# Friends-filter
+# Geo Review
 
 > A Webpack project
 
