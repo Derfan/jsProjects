@@ -1,4 +1,4 @@
-# Friends-filter
+# My Webpack build for test Projects
 
 > A Webpack project
 

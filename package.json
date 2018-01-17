@@ -1,8 +1,8 @@
 {
-  "name": "friends-filter",
+  "name": "webpack-build",
   "version": "1.0.0",
-  "main": "index.js",
-  "repository": "git@github.com:Derfan/friends-filter.git",
+  "main": "main.js",
+  "repository": "git@github.com:Derfan/jsProjects.git",
   "license": "MIT",
   "scripts": {
     "dev": "webpack-dev-server --env development",

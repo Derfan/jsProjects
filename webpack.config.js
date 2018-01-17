@@ -17,28 +17,28 @@ const PATHS = {
 };
 
 const common = merge([
-    {
-        entry: {
-            'index': PATHS.source + '/pages/app.js'
-        },
-        output: {
-            path: PATHS.build,
-            filename: 'js/[name].js'
-        },
-        plugins: [
-            new HtmlWebpackPlugin({
-                filename: 'index.html',
-                chunks: ['index', 'common'],
-                template: PATHS.source + '/pages/index.hbs'
-            }),
-            new webpack.optimize.CommonsChunkPlugin({
-                name: 'common'
-            })
-        ]
+  {
+    entry: {
+      index: PATHS.source + "/main.js"
     },
-    babel(),
-    handlebars(),
-    images()
+    output: {
+      path: PATHS.build,
+      filename: "js/[name].js"
+    },
+    plugins: [
+      new HtmlWebpackPlugin({
+        filename: "index.html",
+        chunks: ["index", "common"],
+        template: PATHS.source + "/index.html"
+      }),
+      new webpack.optimize.CommonsChunkPlugin({
+        name: "common"
+      })
+    ]
+  },
+  babel(),
+  handlebars(),
+  images()
 ]);
 
 module.exports = env => {
